@@ -1,13 +1,13 @@
-[x390-cli.sh script Desc]
-Machine Holds Alpine Linux: Thinkpad x390
-Wireless HW: Intel Wireless-AC 9560 160MHz, REV=0x354
-WAN Chipest: Fibocom, L850-GL-07
-Create Date: Jan 12, 2022
-Author: x.vin.zhang@outlook.com
-Language: Bash
+# x390-cli.sh script Desc
++ Machine Holds Alpine Linux: Thinkpad x390
++ Wireless HW: Intel Wireless-AC 9560 160MHz, REV=0x354
++ WAN Chipest: Fibocom, L850-GL-07
++ Create Date: Jan 12, 2022
++ Author: x.vin.zhang@outlook.com
++ Language: Bash
 
-[1. Usage]
-'''
+## Help message
+```
  # ./x390-cli.sh
    ./x390-cli.sh install
    ./x390-cli.sh scan
@@ -15,49 +15,48 @@ Language: Bash
    ./x390-cli.sh config [ssid] [password]
    ./x390-cli.sh start
    ./x390-cli.sh stop
-'''
+```
 
-[2. Install softwares]
+### Install softwares
 
-'''
+```
 # ./x390-cli.sh install
-'''
+```
 
-[3. Scan the LAN network]
-'''
+### Scan the LAN network
+
+```
 # ./x390-cli.sh scan
 Available connections(SSIDs):
-fxxxxxxxxx
-CMCC-\xE8\x80\xE9\x92\xA2
 spacexxx
 \xE5\xB0\x8F\ABWiFi_90F8
-Xiaomi_xxx
-ChinaNet-Gxxxxxxxxx
-ChinaNet-iTxxxxxxxxxxx
 spacexxx_5g
-'''
+```
 
-[4. Check the SSID and Password works or not]
-'''
+### Check the SSID and Password works or not
+
+```
 # ./x390-cli.sh check spacexxx ********
 network={
 	ssid="spacexxx"
 	#psk="********"
 	psk=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 }
-'''
+```
 
 
-[5. Start the program, here it's failed because without the config file for wpa_supplicant]
-'''
+### Start the program, here it's failed because without the config file for wpa_supplicant
+
+```
 # ./x390-cli.sh start
 /etc/wpa_supplicant/wpa_supplicant.conf can not be found, please use cmds to generate it: ./x390-cli.sh config [ssid] [password]
-'''
+```
 
 
 
-[6. Config the wifi setting, choose the wifi SSID and set its password]
-'''
+### Config the wifi setting, choose the wifi SSID and set its password
+
+```
 # ./x390-cli.sh config spacexxx ********
 /etc/wpa_supplicant/wpa_supplicant.conf created
 network={
@@ -65,11 +64,12 @@ network={
 	#psk="********"
 	psk=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 }
-'''
+```
 
 
-[7. Start the program]
-'''
+### Start the program
+
+```
 # ./x390-cli.sh start
 link up wlan0
 loading wifi config ...
@@ -87,9 +87,10 @@ wlan0: CTRL-EVENT-CONNECTED - Connection to 50:xx:xx:xx:xx:xx completed [id=0 id
        valid_lft forever preferred_lft forever
     inet6 fe80::xxxx:xxxx:xxxx:xxxx/64 scope link 
        valid_lft forever preferred_lft forever
-'''
+```
 
-[8. Stop the program]
-'''
+### Stop the program
+
+```
 # ./x390-cli.sh stop
-'''
+```
